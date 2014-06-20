@@ -5,8 +5,8 @@
 #   "azure-storage": "*"
 #
 # Configuration:
-#   HUBOT_AZURE_STORAGE_ACCOUNT             - Azure Storage account name
-#   HUBOT_AZURE_STORAGE_ACCESS_KEY          - Azure Storage Access Key
+#   HUBOT_BRAIN_AZURE_STORAGE_ACCOUNT             - Azure Storage account name
+#   HUBOT_BRAIN_AZURE_STORAGE_ACCESS_KEY          - Azure Storage Access Key
 #   HUBOT_BRAIN_AZURE_STORAGE_CONTAINER     - Azure Storage Blob container name (defaults to 'hubot')
 #
 # Commands:
@@ -31,7 +31,7 @@ module.exports = (robot) ->
   blobName          = "brain-dump.json"
 
   unless account and accessKey
-    throw new Error "Azure Storage Blob brain requires HUBOT_AZURE_STORAGE_ACCOUNT and \
+    throw new Error "Azure Storage Blob brain requires HUBOT_BRAIN_AZURE_STORAGE_ACCOUNT and \
       HUBOT_BRAIN_AZURE_STORAGE_ACCESS_KEY"
 
   blobSvc = azure.createBlobService account, accessKey

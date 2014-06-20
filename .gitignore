@@ -28,3 +28,4 @@ node_modules
 *.sln
 *.suo
 *.njsproj
+WebEssentials-Settings.json
