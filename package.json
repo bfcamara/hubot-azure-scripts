@@ -1,6 +1,6 @@
 {
   "name": "hubot-azure-scripts",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Hubot scripts for Azure",
   "main": "src/scripts",  
   "dependencies": {
