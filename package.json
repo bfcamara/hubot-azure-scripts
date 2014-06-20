@@ -1,0 +1,25 @@
+{
+  "name": "hubot-azure-scripts",
+  "version": "0.0.1",
+  "description": "Hubot scripts for Azure",
+  "dependencies": {
+    "azure-storage": "~0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bfcamara/hubot-azure-scripts.git"
+  },
+  "keywords": [
+    "hubot",
+    "azure"
+  ],
+  "author": "bfcamara (http://www.bfcamara.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bfcamara/hubot-azure-scripts/issues"
+  }
+}
