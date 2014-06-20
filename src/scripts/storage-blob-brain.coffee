@@ -75,6 +75,7 @@ module.exports = (robot) ->
       else
         robot.logger.debug "Could not load brain from Blob. Initialiazing new brain data"
         robot.brain.mergeData {}
+        
   init()
 
   robot.brain.on 'save', (data)->
