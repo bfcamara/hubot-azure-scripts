@@ -18,7 +18,7 @@ This module provides a brain implementation to store it in a Azure Storage Blob.
 You need to edit the `external-scrips.json` to include the file `hubot-azure-scripts/brain/storage-blob-brain`, 
 and remove the the `redis-brain` from the `hubot-scripts.json` file.
 
-Then you have to define the followinf environment variables:
+Then you have to define the following environment variables:
 
 +  `HUBOT_BRAIN_AZURE_STORAGE_ACCOUNT` - The Azure storage account name
 +  `HUBOT_BRAIN_AZURE_STORAGE_ACCESS_KEY` - The Azure storage access key
