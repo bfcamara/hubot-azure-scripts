@@ -29,3 +29,4 @@ node_modules
 *.suo
 *.njsproj
 WebEssentials-Settings.json
+.idea/
