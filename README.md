@@ -20,6 +20,7 @@ and remove the the `redis-brain` from the `hubot-scripts.json` file.
 
 Then you have to define the following environment variables:
 
++  `HUBOT_BRAIN_USE_STORAGE_EMULATOR` - Whether or not to use the Azure Storage Emulator
 +  `HUBOT_BRAIN_AZURE_STORAGE_ACCOUNT` - The Azure storage account name
 +  `HUBOT_BRAIN_AZURE_STORAGE_ACCESS_KEY` - The Azure storage access key
 +  `HUBOT_BRAIN_AZURE_STORAGE_CONTAINER` - The Azure storage container. If not defined defaults to `hubot`
