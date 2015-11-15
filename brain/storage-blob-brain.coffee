@@ -5,6 +5,7 @@
 #   "azure-storage": "*"
 #
 # Configuration:
+#   HUBOT_BRAIN_USE_STORAGE_EMULATOR              - Whether or not to use the Azure Storage Emulator
 #   HUBOT_BRAIN_AZURE_STORAGE_ACCOUNT             - Azure Storage account name
 #   HUBOT_BRAIN_AZURE_STORAGE_ACCESS_KEY          - Azure Storage Access Key
 #   HUBOT_BRAIN_AZURE_STORAGE_CONTAINER           - Azure Storage Blob container name (defaults to 'hubot')
@@ -24,19 +25,23 @@ module.exports = (robot) ->
 
   loaded            = false
   initializing      = false
+  useDevStore       = process.env.HUBOT_BRAIN_USE_STORAGE_EMULATOR
   account           = process.env.HUBOT_BRAIN_AZURE_STORAGE_ACCOUNT
   accessKey         = process.env.HUBOT_BRAIN_AZURE_STORAGE_ACCESS_KEY
   containerName     = process.env.HUBOT_BRAIN_AZURE_STORAGE_CONTAINER  or "hubot"
-  
+
   blobName          = "brain-dump.json"
   lastBrainData     = ""
 
-  unless account and accessKey
-    throw new Error "Azure Storage Blob brain requires HUBOT_BRAIN_AZURE_STORAGE_ACCOUNT and \
-      HUBOT_BRAIN_AZURE_STORAGE_ACCESS_KEY"
+  if useDevStore == 'true'
+    blobSvc = azure.createBlobService azure.generateDevelopmentStorageCredendentials()
+  else
+    unless account and accessKey
+      throw new Error "Azure Storage Blob brain requires HUBOT_BRAIN_AZURE_STORAGE_ACCOUNT and \
+        HUBOT_BRAIN_AZURE_STORAGE_ACCESS_KEY"
 
-  blobSvc = azure.createBlobService account, accessKey
-  
+    blobSvc = azure.createBlobService account, accessKey
+
   init = ()->
     initializing = true
     blobSvc.createContainerIfNotExists containerName, (err, justCreated, response) ->
