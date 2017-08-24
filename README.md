@@ -1,8 +1,15 @@
 hubot-azure-scripts
 ===================
 
-Hubot module to provide a bunch of Azure scripts and a brain implementation targeting 
-Azure Storage Account
+**DEPRECATED**: this package is deprecated. Use `hubot-azure-brain` instead (https://github.com/coryallegory/hubot-azure-brain) which is a fork of this project.
+
+The original idea of this package was to provide hubot scripts to manage Azure resources.
+However, currently, what this package provides is just an implementation of a Hubot brain to
+persist in an Azure blob storage. If you are looking just for the brain implementation
+you should use use the separate package `hubot-azure-brain` which you can find it [here](https://github.com/coryallegory/hubot-azure-brain)
+and is a fork of this project.
+
+## Installation
 
 Install it using `npm install hubot-azure-scripts`
 
